@@ -29,7 +29,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           source: "dist/*"
-          target: "/var/www/portfolio/"
+          target: "/var/www/html/"
           strip_components: 1
 
       - name: Execute deployment commands
