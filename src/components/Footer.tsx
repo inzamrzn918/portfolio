@@ -7,9 +7,8 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-center gap-2">
           <Coffee className="w-4 h-4" />
-          <p>Built with passion and coffee</p>
+          <p>2023 Inzamul Hoque. All rights reserved.</p>
         </div>
-        <p className="mt-4">&copy; 2023 Inzamul Hoque. All rights reserved.</p>
       </div>
     </footer>
   );
