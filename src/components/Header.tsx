@@ -14,7 +14,7 @@ const Header = () => {
             Software Engineer
           </p>
           <div className="flex justify-center gap-4">
-            <a href="https://github.com/inzamran918" className="p-2 hover:text-blue-400 transition-colors">
+            <a href="https://github.com/inzamrzn918" className="p-2 hover:text-blue-400 transition-colors">
               <Github size={24} />
             </a>
             <a href="https://linkedin.com/in/inzamul" className="p-2 hover:text-blue-400 transition-colors">
