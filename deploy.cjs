@@ -1,25 +1,26 @@
 const { exec } = require('child_process');
 const path = require('path');
 
-// Define the commands
-const deployCommands = [
-  'scp -r ./dist/* ubuntu@inzam.xyz:/home/ubuntu/dist/',
-  'ssh ubuntu@inzam.xyz "sudo mv /home/ubuntu/dist/* /var/www/html/"',
-  'ssh ubuntu@inzam.xyz "sudo chown -R www-data:www-data /var/www/html/"',
-  'ssh ubuntu@inzam.xyz "sudo chmod -R 755 /var/www/html/"',
-  'ssh ubuntu@inzam.xyz "sudo systemctl restart apache2"'
-];
+const deploy = async () => {
+  const commands = [
+    'npm run build',
+    `scp -r ${path.join(__dirname, 'dist')}/* ${process.env.SSH_USER}@${process.env.SSH_HOST}:/var/www/html/`
+  ];
 
-// Run deployment commands
-deployCommands.forEach((command) => {
-  exec(command, { cwd: path.resolve(__dirname) }, (err, stdout, stderr) => {
-    if (err) {
-      console.error(`Error executing command: ${command}`, err);
-      return;
-    }
-    if (stderr) {
-      console.error(`stderr: ${stderr}`);
-    }
-    console.log(`stdout: ${stdout}`);
-  });
-});
+  for (const command of commands) {
+    console.log(`Executing: ${command}`);
+    await new Promise((resolve, reject) => {
+      exec(command, (error, stdout, stderr) => {
+        if (error) {
+          console.error(`Error: ${error}`);
+          reject(error);
+          return;
+        }
+        console.log(stdout);
+        resolve();
+      });
+    });
+  }
+};
+
+deploy();
