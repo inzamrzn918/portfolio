@@ -19,14 +19,14 @@ const About = () => {
               <Database className="w-12 h-12 mx-auto mb-2 text-blue-400" />
               <p className="text-white text-lg font-semibold">Databases</p>
             </div>
-            <div className="text-center w-28">
+            {/* <div className="text-center w-28">
               <Code2 className="w-12 h-12 mx-auto mb-2 text-blue-400" />
               <p className="text-white text-lg font-semibold">Frontend</p>
             </div>
             <div className="text-center w-28">
               <Terminal className="w-12 h-12 mx-auto mb-2 text-blue-400" />
               <p className="text-white text-lg font-semibold">DevOps</p>
-            </div>
+            </div> */}
             <div className="text-center w-28">
               <Brain className="w-12 h-12 mx-auto mb-2 text-blue-400" />
               <p className="text-white text-lg font-semibold">AI/ML</p>

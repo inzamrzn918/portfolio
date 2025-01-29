@@ -60,7 +60,7 @@ const Skills = () => {
               <span className="px-3 py-1 bg-slate-700 rounded-full text-sm">Tomcat</span>
             </div>
           </div>
-          <div className="bg-slate-800 rounded-lg p-6">
+          {/* <div className="bg-slate-800 rounded-lg p-6">
             <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
               <Computer size={20} /> UI
             </h3>
@@ -70,7 +70,7 @@ const Skills = () => {
               <span className="px-3 py-1 bg-slate-700 rounded-full text-sm">JavaScript</span>
               <span className="px-3 py-1 bg-slate-700 rounded-full text-sm">TailwindCSS</span>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>
