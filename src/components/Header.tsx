@@ -11,7 +11,7 @@ const Header = () => {
             Inzamul Hoque
           </h1>
           <p className="text-xl md:text-2xl text-slate-300 mb-8">
-            Software Engineer
+            Software Engineer | Backend Developer | AI/ML Enthusiast
           </p>
           <div className="flex justify-center gap-4">
             <a href="https://github.com/inzamrzn918" className="p-2 hover:text-blue-400 transition-colors">
@@ -28,6 +28,15 @@ const Header = () => {
             </a>
           </div>
         </div>
+        <div className="text-center mt-12">
+            <a
+              href="/resume.pdf"
+              download="Inzamul_Hoque_Resume.pdf"
+              className="inline-block bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 hover:text-white transition duration-300"
+            >
+              Download Resume
+            </a>
+            </div>
       </div>
     </header>
   );
