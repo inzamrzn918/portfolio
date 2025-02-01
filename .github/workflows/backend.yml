@@ -1,10 +1,12 @@
-name: Deploy FastAPI
+name: Deploy FastAPI Backend
 
 on:
   push:
     branches: [ main ]
     paths:
+      - '.github/workflows/backend.yml'
       - 'fast_api_backend/**'
+      - 'docker-compose.yml'
 
 jobs:
   deploy:
@@ -25,34 +27,13 @@ jobs:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/portfolio-backend:latest
 
-      - name: Deploy to Server
+      - name: Deploy Backend
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            # Setup Apache config
-            sudo tee /etc/apache2/sites-available/portfolio.conf << EOF
-            <VirtualHost *:80>
-                ServerAdmin webmaster@localhost
-                DocumentRoot /var/www/html
-
-                ProxyPreserveHost On
-                ProxyPass /api http://localhost:8000
-                ProxyPassReverse /api http://localhost:8000
-
-                ErrorLog \${APACHE_LOG_DIR}/error.log
-                CustomLog \${APACHE_LOG_DIR}/access.log combined
-            </VirtualHost>
-            EOF
-
-            # Enable Apache modules and site
-            sudo a2enmod proxy
-            sudo a2enmod proxy_http
-            sudo a2ensite portfolio.conf
-            
-            # Restart container
             cd /var/www/html/portfolio
             docker stop portfolio-backend || true
             docker rm portfolio-backend || true
@@ -63,6 +44,3 @@ jobs:
               --env-file .env.production \
               --restart always \
               ${{ secrets.DOCKER_USERNAME }}/portfolio-backend:latest
-
-            # Restart Apache
-            sudo systemctl restart apache2
