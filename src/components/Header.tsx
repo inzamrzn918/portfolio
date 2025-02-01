@@ -1,5 +1,6 @@
 import React from 'react';
-import { Github, Linkedin, Mail, Phone } from 'lucide-react';
+import { Github, Linkedin, Mail, Phone, Scroll } from 'lucide-react';
+import ScrollIndicator from './ScrollIndicator';
 
 const Header = () => {
   return (
@@ -36,8 +37,10 @@ const Header = () => {
             >
               Download Resume
             </a>
+            <ScrollIndicator />
             </div>
       </div>
+      
     </header>
   );
 };

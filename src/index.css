@@ -5,10 +5,79 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    @apply text-base;
+  }
+  
+  @screen sm {
+    html {
+      @apply text-sm;
+    }
+  }
+  
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
   }
   
   body {
     @apply bg-slate-900;
+  }
+}
+
+@layer components {
+  .container {
+    @apply px-4 md:px-6 lg:px-8 mx-auto max-w-7xl;
+  }
+  
+  .section {
+    @apply py-12 md:py-16 lg:py-20;
+  }
+  
+  .card {
+    @apply p-4 md:p-6 rounded-lg shadow-lg;
+  }
+
+  .scroll-indicator {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+    cursor: pointer;
+  }
+
+  .scroll-text {
+    color: rgb(209 213 219);
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .scroll-arrow {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid rgb(209 213 219);
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@layer utilities {
+  .touch-action-none {
+    touch-action: none;
   }
 }
 
@@ -46,4 +115,47 @@ header a {
 
 header a:hover {
   color: #3b82f6;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.animate-bounce {
+  animation: bounce 1s infinite;
+}
+
+@keyframes scrollDown {
+  0% {
+    transform: translate3d(0, -20px, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(0, 20px, 0);
+    opacity: 0;
+  }
+}
+
+.animate-scroll {
+  animation: scrollDown 2s cubic-bezier(0.76, 0, 0.24, 1) infinite;
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
