@@ -18,7 +18,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            cd /var/www/html/portfolio
+            cd /var/www/html
             docker compose pull backend
             docker compose down backend
             docker compose up -d backend
