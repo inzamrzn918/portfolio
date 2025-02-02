@@ -58,5 +58,7 @@ jobs:
             pipenv --python 3.11 install
             # Install uvicorn explicitly
             pipenv install uvicorn
+            # List files to debug
+            ls -la
             # Start the FastAPI server using uvicorn
-            pipenv run uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+            pipenv run uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
