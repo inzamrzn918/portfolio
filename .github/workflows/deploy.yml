@@ -39,6 +39,4 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            sudo a2ensite portfolio.conf
             sudo systemctl reload apache2
-
