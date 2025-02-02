@@ -55,6 +55,6 @@ jobs:
             # Remove existing virtual environment if it exists
             rm -rf .venv
             # Install dependencies from Pipfile
-            pipenv --python 3 install
+            pipenv --python 3.11 install
             # Start the FastAPI server
-            pipenv run uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+            fastapi run
