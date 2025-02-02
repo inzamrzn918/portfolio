@@ -3,8 +3,8 @@ name: Deploy FastAPI Code
 on:
   push:
     branches: [ main ]
-    paths:
-      - 'fast_api_backend/**'
+    # paths:
+    #   - 'fast_api_backend/**'
 
 jobs:
   deploy:
@@ -35,7 +35,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
-            rsync -av --exclude='.venv' --exclude='__pycache__' --exclude='.pytest_cache' fast_api_backend/ /var/www/html/portfolio/
+            rsync -av --exclude='.venv' --exclude='__pycache__' --exclude='.pytest_cache' ./fast_api_backend/ /var/www/html/portfolio/
 
       # Step 5: SSH into the server, install dependencies, and run FastAPI
       - name: Setup and Run FastAPI
