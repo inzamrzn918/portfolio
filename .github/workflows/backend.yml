@@ -2,7 +2,7 @@ name: Deploy FastAPI Backend
 
 on:
   push:
-    branches: [ main ]
+    branches: [ OS ]
     paths:
       - '.github/workflows/backend.yml'
       - 'fast_api_backend/**'

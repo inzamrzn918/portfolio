@@ -18,7 +18,12 @@ class MongoDB:
             raise ValueError("MONGODB_URI environment variable is not set")
 
         # Create async MongoDB client
-        cls.client = AsyncIOMotorClient(mongodb_uri, server_api=ServerApi('1'))
+        cls.client = AsyncIOMotorClient(
+            mongodb_uri, 
+            server_api=ServerApi('1'),
+            tls=True,
+            tlsAllowInvalidCertificates=True
+            )
         cls.database = cls.client.portfolio  # database name
         
         # Verify connection
