@@ -37,6 +37,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
           script: |
+            # Deploy backend container
             cd /var/www/html/portfolio
             docker stop portfolio-backend || true
             docker rm portfolio-backend || true
@@ -47,3 +48,21 @@ jobs:
               --env-file .env.production \
               --restart always \
               ${{ secrets.DOCKER_USERNAME }}/portfolio-backend:latest
+
+            # Configure Apache proxy
+            sudo a2enmod proxy
+            sudo a2enmod proxy_http
+            
+            # Create proxy configuration
+            sudo tee /etc/apache2/sites-available/api-proxy.conf << EOF
+            <VirtualHost *:80>
+                ServerName api.yourdomain.com
+                ProxyPreserveHost On
+                ProxyPass /api/ http://localhost:8000/
+                ProxyPassReverse /api/ http://localhost:8000/
+            </VirtualHost>
+            EOF
+
+            # Enable site and restart Apache
+            sudo a2ensite api-proxy.conf
+            sudo systemctl restart apache2
