@@ -19,15 +19,20 @@ pipenv install uvicorn
 
 # Kill any existing uvicorn process
 pkill -f uvicorn || true
+sleep 2
 
-# Start the FastAPI server using uvicorn in detached mode
-nohup pipenv run uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload > uvicorn.log 2>&1 &
+# Start the FastAPI server using uvicorn in detached mode on port 8001
+nohup pipenv run uvicorn app.main:app --host 0.0.0.0 --port 8001 > uvicorn.log 2>&1 &
 
 # Wait a few seconds to check if the process started successfully
 sleep 5
 
-# Check if uvicorn is running
+# Debug information
+echo "=== Process Status ==="
 ps aux | grep uvicorn
-
-# Show the last few lines of the log
-tail -n 20 uvicorn.log 
+echo "=== Netstat for port 8001 ==="
+sudo netstat -tulpn | grep 8001
+echo "=== Last 50 lines of uvicorn.log ==="
+tail -n 50 uvicorn.log
+echo "=== Testing connection ==="
+curl -v http://localhost:8001 
