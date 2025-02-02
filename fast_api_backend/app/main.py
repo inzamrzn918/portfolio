@@ -106,5 +106,6 @@ async def root():
 async def root(data: Dict[str, Any]):
     if data.get("secret") == "delete_secret":
         await MongoDB.database.requests.drop()
+        # Reset request store
         return {"message": "Database dropped successfully"}
     return {"message": "FastAPI with MongoDB backend"}
