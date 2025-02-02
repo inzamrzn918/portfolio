@@ -1,0 +1,50 @@
+name: Deploy FastAPI Code
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'fast_api_backend/**'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout code from the repository
+      - uses: actions/checkout@v3
+
+      # Step 2: Install Pipenv
+      - name: Install Pipenv
+        run: |
+          pip install pipenv
+
+      # Step 3: Cache pipenv dependencies
+      - name: Cache pipenv dependencies
+        uses: actions/cache@v2
+        with:
+          path: ~/.cache/pipenv
+          key: ${{ runner.os }}-pipenv-${{ hashFiles('**/Pipfile.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-pipenv-
+
+      # Step 4: Copy FastAPI files to the server using rsync (via SSH)
+      - name: Copy FastAPI files using rsync
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            rsync -av --exclude='.venv' --exclude='__pycache__' --exclude='.pytest_cache' fast_api_backend/ /var/www/html/portfolio/
+
+      # Step 5: SSH into the server, install dependencies, and run FastAPI
+      - name: Setup and Run FastAPI
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            cd /var/www/html/portfolio
+            pipenv install
+            fastapi run
