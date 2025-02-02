@@ -60,5 +60,7 @@ jobs:
             pipenv install uvicorn
             # List files to debug
             ls -la
-            # Start the FastAPI server using uvicorn
-            pipenv run uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
+            # Kill any existing uvicorn process
+            pkill -f uvicorn || true
+            # Start the FastAPI server using uvicorn in detached mode
+            nohup pipenv run uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload > uvicorn.log 2>&1 &
