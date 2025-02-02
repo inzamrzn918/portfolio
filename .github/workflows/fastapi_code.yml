@@ -27,15 +27,21 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pipenv-
 
-      # Step 4: Copy FastAPI files to the server using rsync (via SSH)
-      - name: Copy FastAPI files using rsync
-        uses: appleboy/ssh-action@master
+      # Step 4: Copy FastAPI files to the server using SCP
+      - name: Copy FastAPI files using SCP
+        uses: appleboy/scp-action@v0.1.4
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_KEY }}
-          script: |
-            rsync -av --exclude='.venv' --exclude='__pycache__' --exclude='.pytest_cache' ./fast_api_backend/ /var/www/html/portfolio/
+          source: "fast_api_backend/*"
+          target: "/var/www/html/portfolio"
+          rm: false
+          strip_components: 1
+          exclude: |
+            **/.venv/**
+            **/__pycache__/**
+            **/*.pyc
 
       # Step 5: SSH into the server, install dependencies, and run FastAPI
       - name: Setup and Run FastAPI
