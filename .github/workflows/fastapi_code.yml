@@ -56,5 +56,7 @@ jobs:
             rm -rf .venv
             # Install dependencies from Pipfile
             pipenv --python 3.11 install
-            # Start the FastAPI server
-            fastapi run
+            # Install uvicorn explicitly
+            pipenv install uvicorn
+            # Start the FastAPI server using uvicorn
+            pipenv run uvicorn main:app --host 0.0.0.0 --port 8000 --reload
