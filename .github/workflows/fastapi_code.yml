@@ -38,10 +38,6 @@ jobs:
           target: "/var/www/html/portfolio"
           rm: false
           strip_components: 1
-          exclude: |
-            **/.venv/**
-            **/__pycache__/**
-            **/*.pyc
 
       # Step 5: SSH into the server, install dependencies, and run FastAPI
       - name: Setup and Run FastAPI
@@ -52,5 +48,7 @@ jobs:
           key: ${{ secrets.SSH_KEY }}
           script: |
             cd /var/www/html/portfolio
+            python3 -m pip install --user pipenv
+            export PATH="$PATH:$HOME/.local/bin"
             pipenv install
-            fastapi run
+            pipenv run uvicorn main:app --host 0.0.0.0 --port 8000 --reload
