@@ -1,31 +1,29 @@
-name: Deploy FastAPI Code
+name: FastAPI Backend CI/CD
 
 on:
   push:
     branches: [ main ]
-    # paths:
-    #   - 'fast_api_backend/**'
+  pull_request:
+    branches: [ main ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      # Step 1: Checkout code from the repository
-      - uses: actions/checkout@v3
-
-      # Step 2: Install Pipenv
-      - name: Install Pipenv
-        run: |
-          pip install pipenv
-
-      # Step 3: Cache pipenv dependencies
-      - name: Cache pipenv dependencies
-        uses: actions/cache@v2
+      - uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
         with:
-          path: ~/.cache/pipenv
-          key: ${{ runner.os }}-pipenv-${{ hashFiles('**/Pipfile.lock') }}
+          python-version: '3.11'
+          
+      - name: Cache pip packages
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/pip
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
           restore-keys: |
-            ${{ runner.os }}-pipenv-
+            ${{ runner.os }}-pip-
 
       # Step 4: Copy FastAPI files to the server using SCP
       - name: Copy FastAPI files using SCP
