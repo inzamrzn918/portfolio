@@ -54,7 +54,7 @@ function App() {
       await apiService.storeRequestData(data);
     };
 
-    getEnhancedClientData();
+    // getEnhancedClientData();
   }, []); // Only run once on initial mount
 
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Github, Linkedin, Mail, Phone, Scroll } from 'lucide-react';
+import { DownloadCloudIcon, Github, Linkedin, Mail, Phone, Scroll } from 'lucide-react';
 import ScrollIndicator from './ScrollIndicator';
 
 const Header = () => {
@@ -30,13 +30,21 @@ const Header = () => {
           </div>
         </div>
         <div className="text-center mt-12">
-            <a
+              <a
+                href="/resume.pdf"
+                download="Inzamul_Hoque_Resume.pdf"
+                className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 hover:bg-blue-600 hover:text-white text-white px-6 py-3 rounded-lg transition-colors transition duration-300"
+              >
+                <DownloadCloudIcon size={20} />
+                Download Resume
+              </a>
+            {/* <a
               href="/resume.pdf"
               download="Inzamul_Hoque_Resume.pdf"
               className="inline-block bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 hover:text-white transition duration-300"
             >
-              Download Resume
-            </a>
+              <Download size={80} />
+            </a> */}
             <ScrollIndicator />
             </div>
       </div>
