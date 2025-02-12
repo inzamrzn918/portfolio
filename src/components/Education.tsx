@@ -9,14 +9,14 @@ const Education = () => {
           {[ 
             {
               title: "Master of Computer Applications",
-              institution: "Assam Science & Technology University – Guwahati, Assam",
+              institution: "Assam Science & Technology University",
               year: "2022",
               project: "Final Project: Leave Management System (Django, Angular); graded 10/10 by the university.",
               cgpa: "CGPA: 8.82/10"
             },
             {
               title: "Bachelor of Computer Applications",
-              institution: "Gauhati University – Guwahati, Assam",
+              institution: "Gauhati University",
               year: "2018",
               project: "Final Project: United India Insurance Website Clone (PHP, MySQL, jQuery, HTML, CSS).",
               cgpa: "CGPA: 6.6/10"
