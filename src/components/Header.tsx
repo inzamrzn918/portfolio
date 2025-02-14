@@ -18,7 +18,7 @@ const Header = () => {
             <a href="https://github.com/inzamrzn918" className="p-2 hover:text-blue-400 transition-colors">
               <Github size={24} />
             </a>
-            <a href="https://linkedin.com/in/inzamul" className="p-2 hover:text-blue-400 transition-colors">
+            <a href="https://linkedin.com/in/inzamol" className="p-2 hover:text-blue-400 transition-colors">
               <Linkedin size={24} />
             </a>
             <a href="mailto:inzamol@gmail.com" className="p-2 hover:text-blue-400 transition-colors">
