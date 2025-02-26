@@ -8,7 +8,7 @@ const About = () => {
         <h2 className="text-3xl font-bold mb-12 text-center text-white">About Me</h2>
         <div className="max-w-5xl mx-auto">
           <p className="text-slate-300 leading-relaxed mb-6 text-justify">
-            Dedicated Backend Developer with over 2 years of experience in designing and implementing scalable backend solutions. Proficient in Python-based frameworks such as Django and FastAPI, REST API development, and system automation. Skilled in leveraging Golang and cloud platforms like AWS to optimize backend processes and improve system performance. Adept at solving complex problems, delivering reliable solutions, and driving business value through technology.
+            Dedicated Backend Developer with over 3 years of experience in designing and implementing scalable backend solutions. Proficient in Python-based frameworks such as Django and FastAPI, REST API development, and system automation. Skilled in leveraging Golang and cloud platforms like AWS to optimize backend processes and improve system performance. Adept at solving complex problems, delivering reliable solutions, and driving business value through technology.
           </p>
           <div className="flex flex-wrap justify-center gap-12 mt-12">
             <div className="text-center w-28">
