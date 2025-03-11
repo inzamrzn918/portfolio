@@ -9,7 +9,7 @@ const Header = () => {
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
-            Inzamul Hoque
+            INZAMUL HOQUE
           </h1>
           <p className="text-xl md:text-2xl text-slate-300 mb-8">
             Software Engineer | Backend Developer | AI/ML Enthusiast

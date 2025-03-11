@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect } from 'react';
 import ErrorBoundary from './components/ErrorBoundary';
 import apiService from './services/api';
+import Projects from './components/Projects';
 
 const Header = React.lazy(() => import('./components/Header'));
 const About = React.lazy(() => import('./components/About'));
@@ -65,6 +66,7 @@ function App() {
           <About />
           <Skills />
           <Experience />
+          <Projects />
           <Education />
           <Contact />
           <Footer />

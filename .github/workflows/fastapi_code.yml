@@ -2,9 +2,9 @@ name: FastAPI Backend CI/CD
 
 on:
   push:
-    branches: [ main ]
+    branches: [ O ]
   pull_request:
-    branches: [ main ]
+    branches: [ S ]
 
 jobs:
   deploy:
