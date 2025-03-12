@@ -8,10 +8,10 @@ const Header = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20" />
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-3xl mx-auto text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
+          <h1 className="text-6xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500">
             INZAMUL HOQUE
           </h1>
-          <p className="text-xl md:text-2xl text-slate-300 mb-8">
+          <p className="text-2xl md:text-2xl text-slate-300 mb-8">
             Software Engineer | Backend Developer | AI/ML Enthusiast
           </p>
           <div className="flex justify-center gap-4">
@@ -29,7 +29,7 @@ const Header = () => {
             </a>
           </div>
         </div>
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 text-lg">
               <a
                 href="/resume.pdf"
                 download="Inzamul_Hoque_Resume.pdf"

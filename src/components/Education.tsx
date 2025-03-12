@@ -4,7 +4,7 @@ const Education = () => {
   return (
     <section className="py-20 bg-gray-900 text-white">
       <div className="container mx-auto px-6 md:px-12 lg:px-20">
-        <h2 className="text-4xl font-extrabold mb-12 text-center text-gray-100">Education</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 text-blue-400">Education</h2>
         <div className="grid md:grid-cols-2 gap-10 max-w-6xl mx-auto">
           {[ 
             {

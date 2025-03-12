@@ -18,7 +18,7 @@ const ScrollIndicator = () => {
 
   return (
     <div className="flex flex-col items-center animate-bounce mt-8 md:mt-12">
-      <p className="text-gray-400 text-sm mb-2">Scroll to explore</p>
+      <p className="text-gray-400 mb-2">Scroll to explore</p>
       <svg 
         className="w-8 h-8 text-gray-400"
         fill="none" 

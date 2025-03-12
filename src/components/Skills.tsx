@@ -1,4 +1,3 @@
-import React from 'react';
 import { Code, Database, Cloud, GitBranch, ExpandIcon } from 'lucide-react';
 
 const skills = [
@@ -43,7 +42,7 @@ const Skills = () => {
   return (
     <section className="py-20 bg-gray-900 text-white">
       <div className="container mx-auto px-6 md:px-12 lg:px-20">
-        <h2 className="text-4xl font-extrabold mb-12 text-center text-gray-100">Skills</h2>
+        <h2 className="text-4xl font-bold text-center mb-12 text-blue-400">Skills</h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
           {skills.map((skill, index) => (
             <div key={index} className="bg-slate-800 rounded-lg p-8 shadow-2xl transition-all transform hover:scale-105 hover:shadow-xl">
