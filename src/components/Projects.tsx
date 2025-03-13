@@ -20,7 +20,7 @@ const projects = [
       "Integrated FOXY AI and AI Service to WAIVIT Application to generate an AI Report on a property.",
       "Designed the LENDSMART microservice to expose an API from VALTOOL."
     ],
-    link: "https://yourevp.com"
+    link: { Visit: "https://yourevp.com" }
   },
   {
     title: "EVP-VALTOOL",
@@ -42,7 +42,7 @@ const projects = [
       "Integrated FOXY AI and AI Service to WAIVIT Application to generate an AI Report on a property.",
       "Designed the LENDSMART microservice to expose an API from VALTOOL."
     ],
-    link: "https://snap.waivit.net"
+    link: { Visit: "https://snap.waivit.net" }
   },
   {
     title: "EVP Dev Tool",
@@ -59,6 +59,30 @@ const projects = [
       "Developed a feature to migrate legacy data from Excel sheets to the application database.",
       "Contributed to the front end using Angular, improving UI functionality and user experience."
     ]
+  },
+  {
+    title: "Attendance Record Using Machine Learning along with emotions",
+    technologies: "Python, Flask, SQlite, Git, Machine Learning, OpenCV, TensorFlow, Keras",
+    description: [
+      "Developed a facial recognition system using OpenCV and deep learning.",
+      "Integrated the system with a Flask web application to record attendance.",
+      "Trained the model using TensorFlow and Keras to detect emotions and attendance."
+    ],
+    link: { Visit: "https://github.com/inzamrzn918/Attendance-Record-Using-Machine-Learning" }
+  },
+  {
+    title: "Leave Management System",
+    technologies: "Django, Django REST framework, PostgreSQL, Angular, Bootstrap",
+    description: [
+      "Developed a full-stack application for managing employee leaves.",
+      "Implemented role-based access control for users and managers.",
+      "Designed a user-friendly interface using Angular and Bootstrap.",
+      "Integrated Django REST framework for API development."
+    ],
+    link: {
+      Frontend: "https://github.com/inzamrzn918/Leave-Management-System-Frontend",
+      Backend: "https://github.com/inzamrzn918/Leave-Management-System-Backend"
+    }
   }
 ];
 
@@ -90,16 +114,21 @@ const Projects = () => {
               {hoveredIndex === index && (
                 <div className="absolute inset-0 bg-gray-900 bg-opacity-80 flex items-center justify-center rounded-2xl">
                   {project.link ? (
-                    <button
-                      className="bg-green-500 text-white font-semibold px-4 py-2 rounded-lg hover:bg-green-600"
-                      onClick={() => window.open(project.link, "_blank")}
-                    >
-                      Visit
-                    </button>
-                  ) : project.confidential ? (
-                    <span className="text-red-500 font-semibold">Confidential</span>
-                  ) : (
-                    <span className="text-gray-400 font-semibold">No Link Available</span>
+                    // Create a link for each key-value pair in the link object
+                    Object.entries(project.link).map(([text, url], i) => (
+                      <a
+                        key={i}
+                        href={url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="bg-blue-400 text-gray-900 px-4 py-2 rounded-lg font-semibold text-sm hover:bg-blue-500 transition-colors mr-4"
+                      >
+                        {text}
+                      </a>
+
+                     )
+                  )) : (
+                    <p className="text-red-600 text-xl">Confidential project</p>
                   )}
                 </div>
               )}
