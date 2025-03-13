@@ -33,7 +33,7 @@ const Header = () => {
             Software Engineer | Backend Developer | AI/ML Enthusiast
           </p>
           <div className="flex justify-center gap-4">
-            <a href='${conts}' className="p-2 hover:text-blue-400 transition-colors">
+            <a href={contact.github} className="p-2 hover:text-blue-400 transition-colors">
               <Github size={24} />
             </a>
             <a href={contact.linkedin} className="p-2 hover:text-blue-400 transition-colors">
