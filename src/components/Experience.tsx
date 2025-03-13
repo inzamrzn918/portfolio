@@ -1,37 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Briefcase } from "lucide-react";
 
-const experiences = [
-  {
-    title: "Associate Software Engineer",
-    company: "Kanaka Software Consulting Pvt. Ltd",
-    location: "Pune, Maharashtra",
-    duration: "July 2022 - Present",
-    responsibilities: [
-      "Engineered robust backend REST APIs using Django, FastAPI, and Golang, supporting enterprise-grade web applications.",
-      "Automated email attachment processing with Python, integrated with PostgreSQL databases, and visualized results in PowerBI, saving 90% of manual effort.",
-      "Built a Python GUI tool to streamline deployment pipelines, reducing DevOps dependency by ~80%.",
-      "Designed and implemented a Golang-based log processor, reducing build revert rates by up to 99%.",
-      "Single-handedly set up and deployed applications on Windows and Linux servers.",
-      "Developed shell scripts and CI/CD to automate ~100% of deployment process with AWS and AZURE on Debian server.",
-      "Single-handedly set up and deployed a complete backend application using FastAPI, Alembic, SQL Server, and Docker.",
-      "Developed a Python script to collect IoT data via BACnet, store in a time-series DB, and apply business logic."
-    ]
-  },
-  {
-    title: "Trainee Software Engineer",
-    company: "Kanaka Software Consulting Pvt. Ltd",
-    location: "Pune, Maharashtra",
-    duration: "Feb 2022 – June 2022",
-    responsibilities: [
-      "Engineered backend solutions using Django to support full-stack applications.",
-      "Developed the required solution using Angular, ensuring seamless functionality and user experience.",
-      "Automated data migration from CSV/Excel to PostgreSQL using Python, improving accessibility and reducing migration time."
-    ]
-  }
-];
+interface Experience {
+  title: string;
+  company: string;
+  location: string;
+  duration: string;
+  responsibilities: string[];
+}
+
 
 const Experience = () => {
+  const [experiences, setExperiences] = useState<Experience[] | null>(null);
+  useEffect(() => {
+      fetch('/data.json')
+        .then((response) => response.json())
+        .then((data) => setExperiences(data.experience));
+    }, []);
+  
+    if (!experiences) {
+      return null;
+    }
   return (
     <section className="py-20 bg-gray-900 text-white">
       <div className="container mx-auto px-6 lg:px-12">

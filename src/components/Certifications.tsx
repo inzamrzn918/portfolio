@@ -1,41 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { PiCertificateBold } from 'react-icons/pi';
 
-const certifications = [
-  {
-    title: "Python for Machine Learning with Numpy, Pandas & Matplotlib",
-    institution: "Udemy",
-    year: "2024",
-    link: { "Verify": "https://www.youracclaim.com/badges/1b7b3b7b-7b7b-4b7b-8b7b-7b7b7b7b7b7b" }
-  },
-  {
-    title: "Complete JAVA Bootcamp: Go from zero to hero with Spring",
-    institution: "Udemy",
-    year: "2023",
-    link: { "Verify": "https://udemy-certificate.s3.amazonaws.com/pdf/UC-ebc46519-56f6-47ba-a6a0-97a897f365b8.pdf" }
-  },
-  {
-    title: "Flask Tutorial Step by Step",
-    institution: "Udemy",
-    year: "2023",
-    link: { "Verify": "https://www.udemy.com/certificate/UC-15ad315f-db49-4491-b0e4-8b2f3894ef15" }
-  },
-  {
-    title: "Python & Django Framework Course: The Complete Guide",
-    institution: "Udemy",
-    year: "2022",
-    link: { "Verify": "https://udemy-certificate.s3.amazonaws.com/pdf/UC-eefc88ee-be4c-4a96-8397-8c2b392ac10c.pdf" }
-  },
-  {
-    title: "Android Daily Shopping List App Using Firebase(Project base)",
-    institution: "Udemy",
-    year: "2020",
-    link: { "Verify": "https://udemy-certificate.s3.amazonaws.com/pdf/UC-8c296511-608b-4320-a542-1980f39e58d1.pdf" }
-  }
-];
+interface Certification {
+  title: string;
+  institution: string;
+  year: string;
+  link: { [key: string]: string };
+}
 
 const Certifications = () => {
+  const [certifications, setCertifications] = useState<Certification[]>([]);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    fetch('/data.json')
+      .then((response) => response.json())
+      .then((data) => setCertifications(data.certifications));
+  }, []);
 
   return (
     <section className="py-20 bg-gray-900 text-white">
@@ -49,9 +30,9 @@ const Certifications = () => {
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <PiCertificateBold  className='text-xl text-center'/>
+              <PiCertificateBold className='text-xl text-center' />
               <h3 className="text-xl font-semibold mb-2 flex items-center gap-2">
-                 {cert.title}
+                {cert.title}
               </h3>
               <p className="text-gray-400">{cert.institution}</p>
               <p className="text-gray-400">{cert.year}</p>

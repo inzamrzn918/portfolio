@@ -1,8 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { DownloadCloudIcon, Github, Linkedin, Mail, Phone, Scroll } from 'lucide-react';
 import ScrollIndicator from './ScrollIndicator';
 
+interface ContactInfo {
+  email: string;
+  phone: string;
+  github: string;
+  linkedin: string;
+}
+
 const Header = () => {
+  const [contact, setContact] = useState<ContactInfo | null>(null);
+  
+  useEffect(() => {
+    fetch('/data.json')
+      .then((response) => response.json())
+      .then((data) => setContact(data.contact));
+  }, []);
+
+  if (!contact) {
+    return null;
+  }
   return (
     <header className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 to-purple-600/20" />
@@ -15,16 +33,16 @@ const Header = () => {
             Software Engineer | Backend Developer | AI/ML Enthusiast
           </p>
           <div className="flex justify-center gap-4">
-            <a href="https://github.com/inzamrzn918" className="p-2 hover:text-blue-400 transition-colors">
+            <a href='${conts}' className="p-2 hover:text-blue-400 transition-colors">
               <Github size={24} />
             </a>
-            <a href="https://linkedin.com/in/inzamol" className="p-2 hover:text-blue-400 transition-colors">
+            <a href={contact.linkedin} className="p-2 hover:text-blue-400 transition-colors">
               <Linkedin size={24} />
             </a>
-            <a href="mailto:inzamol@gmail.com" className="p-2 hover:text-blue-400 transition-colors">
+            <a href={`mailto:${contact.email}`} className="p-2 hover:text-blue-400 transition-colors">
               <Mail size={24} />
             </a>
-            <a href="tel:+918402098761" className="p-2 hover:text-blue-400 transition-colors">
+            <a href={`tel:${contact.phone}`} className="p-2 hover:text-blue-400 transition-colors">
               <Phone size={24} />
             </a>
           </div>
@@ -38,13 +56,6 @@ const Header = () => {
                 <DownloadCloudIcon size={20} />
                 Download Resume
               </a>
-            {/* <a
-              href="/resume.pdf"
-              download="Inzamul_Hoque_Resume.pdf"
-              className="inline-block bg-blue-500 text-white font-semibold py-2 px-4 rounded hover:bg-blue-600 hover:text-white transition duration-300"
-            >
-              <Download size={80} />
-            </a> */}
             <ScrollIndicator />
             </div>
       </div>

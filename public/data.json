@@ -1,0 +1,208 @@
+{
+  "skills": [
+    {
+      "category": "Programming Languages",
+      "icon": "Code",
+      "items": ["Python", "Go", "JavaScript", "Java", "PHP"]
+    },
+    {
+      "category": "Frameworks",
+      "icon": "Database",
+      "items": ["Django", "FastAPI", "Flask", "Django Rest Framework", "Gin", "Mux"]
+    },
+    {
+      "category": "Libraries",
+      "icon": "Database",
+      "items": ["Pandas", "Numpy", "Pytest", "Boto3", "OpenCV", "Matplotlib"]
+    },
+    {
+      "category": "Databases",
+      "icon": "Database",
+      "items": ["PostgreSQL", "MySQL", "SQLite", "MongoDB", "MS SQL Server"]
+    },
+    {
+      "category": "Cloud Platforms",
+      "icon": "Cloud",
+      "items": ["AWS", "Azure", "VPS"]
+    },
+    {
+      "category": "Automation & Tools",
+      "icon": "GitBranch",
+      "items": ["Git", "CI/CD pipelines", "Docker"]
+    },
+    {
+      "category": "Additional Tools",
+      "icon": "ExpandIcon",
+      "items": ["Apache", "Nginx"]
+    }
+  ],
+  "certifications": [
+    {
+      "title": "Python for Machine Learning with Numpy, Pandas & Matplotlib",
+      "institution": "Udemy",
+      "year": "2024",
+      "link": { "Verify": "https://www.youracclaim.com/badges/1b7b3b7b-7b7b-4b7b-8b7b-7b7b7b7b7b7b" }
+    },
+    {
+      "title": "Complete JAVA Bootcamp: Go from zero to hero with Spring",
+      "institution": "Udemy",
+      "year": "2023",
+      "link": { "Verify": "https://udemy-certificate.s3.amazonaws.com/pdf/UC-ebc46519-56f6-47ba-a6a0-97a897f365b8.pdf" }
+    },
+    {
+      "title": "Flask Tutorial Step by Step",
+      "institution": "Udemy",
+      "year": "2023",
+      "link": { "Verify": "https://www.udemy.com/certificate/UC-15ad315f-db49-4491-b0e4-8b2f3894ef15" }
+    },
+    {
+      "title": "Python & Django Framework Course: The Complete Guide",
+      "institution": "Udemy",
+      "year": "2022",
+      "link": { "Verify": "https://udemy-certificate.s3.amazonaws.com/pdf/UC-eefc88ee-be4c-4a96-8397-8c2b392ac10c.pdf" }
+    },
+    {
+      "title": "Android Daily Shopping List App Using Firebase(Project base)",
+      "institution": "Udemy",
+      "year": "2020",
+      "link": { "Verify": "https://udemy-certificate.s3.amazonaws.com/pdf/UC-8c296511-608b-4320-a542-1980f39e58d1.pdf" }
+    }
+  ],
+  "projects": [
+    {
+      "title": "SOM-Sobeys",
+      "technologies": "Python, FastAPI, MS SQL, React, Docker",
+      "description": [
+        "Built a scalable, asynchronous architecture and high-performance REST APIs.",
+        "Deployed securely on CyberArk Windows Server with Nginx load balancing.",
+        "Implemented SSL, JWT, CORS, and rate limiting.",
+        "Achieved 100% CI/CD automation for testing and deployments."
+      ]
+    },
+    {
+      "title": "EVP - WAIVIT",
+      "technologies": "Go(mux), PostgreSQL, React, AWS, CI/CD, AI",
+      "description": [
+        "Developed RESTful APIs using Go Mux, optimizing enterprise application performance.",
+        "Automated deployment using CI/CD pipelines, achieving 100% automated test and deployments AWS.",
+        "Integrated FOXY AI and AI Service to WAIVIT Application to generate an AI Report on a property.",
+        "Designed the LENDSMART microservice to expose an API from VALTOOL."
+      ],
+      "link": { "Visit": "https://yourevp.com" }
+    },
+    {
+      "title": "EVP-VALTOOL",
+      "technologies": "Go(mux), PostgreSQL, Vue, AWS, CICD",
+      "description": [
+        "Developed RESTful APIs using Go Mux, optimizing enterprise application performance.",
+        "Automated deployment using CI/CD pipelines, achieving 100% automated test and deployments AWS.",
+        "Integrated FOXY AI and AI Service to WAIVIT Application to generate an AI Report on a property.",
+        "Designed the LENDSMART microservice to expose an API from VALTOOL."
+      ],
+      "confidential": true
+    },
+    {
+      "title": "EVP-SNAP",
+      "technologies": "Go(mux), PostgreSQL, React-Native, AWS, CI/CD",
+      "description": [
+        "Developed RESTful APIs using Go Mux, optimizing enterprise application performance.",
+        "Automated deployment using CI/CD pipelines, achieving 100% automated test and deployments AWS.",
+        "Integrated FOXY AI and AI Service to WAIVIT Application to generate an AI Report on a property.",
+        "Designed the LENDSMART microservice to expose an API from VALTOOL."
+      ],
+      "link": { "Visit": "https://snap.waivit.net" }
+    },
+    {
+      "title": "EVP Dev Tool",
+      "technologies": "Python, TKinter, SQLite",
+      "description": [
+        "Developed a Python-based GUI deployment tool, reducing DevOps dependency by 80%."
+      ]
+    },
+    {
+      "title": "Quantuvos",
+      "technologies": "Python, Django, PostgreSQL, Angular",
+      "description": [
+        "Engineered REST API using Django and Django Rest Frameworks.",
+        "Developed a feature to migrate legacy data from Excel sheets to the application database.",
+        "Contributed to the front end using Angular, improving UI functionality and user experience."
+      ]
+    },
+    {
+      "title": "Attendance Record Using Machine Learning along with emotions",
+      "technologies": "Python, Flask, SQlite, Git, Machine Learning, OpenCV, TensorFlow, Keras",
+      "description": [
+        "Developed a facial recognition system using OpenCV and deep learning.",
+        "Integrated the system with a Flask web application to record attendance.",
+        "Trained the model using TensorFlow and Keras to detect emotions and attendance."
+      ],
+      "link": { "Visit": "https://github.com/inzamrzn918/Attendance-Record-Using-Machine-Learning" }
+    },
+    {
+      "title": "Leave Management System",
+      "technologies": "Django, Django REST framework, PostgreSQL, Angular, Bootstrap",
+      "description": [
+        "Developed a full-stack application for managing employee leaves.",
+        "Implemented role-based access control for users and managers.",
+        "Designed a user-friendly interface using Angular and Bootstrap.",
+        "Integrated Django REST framework for API development."
+      ],
+      "link": {
+        "Frontend": "https://github.com/inzamrzn918/Leave-Management-System-Frontend",
+        "Backend": "https://github.com/inzamrzn918/Leave-Management-System-Backend"
+      }
+    }
+  ],
+  "education": [
+    {
+      "title": "Master of Computer Applications",
+      "institution": "Assam Science & Technology University",
+      "year": "2022",
+      "project": "Final Project: Leave Management System (Django, Angular); graded 10/10 by the university.",
+      "cgpa": "CGPA: 8.82/10"
+    },
+    {
+      "title": "Bachelor of Computer Applications",
+      "institution": "Gauhati University",
+      "year": "2018",
+      "project": "Final Project: United India Insurance Website Clone (PHP, MySQL, jQuery, HTML, CSS).",
+      "cgpa": "CGPA: 6.6/10"
+    }
+  ],
+  "experiences":[
+    {
+      "title": "Associate Software Engineer",
+      "company": "Kanaka Software Consulting Pvt. Ltd",
+      "location": "Pune, Maharashtra",
+      "duration": "July 2022 - Present",
+      "responsibilities": [
+        "Engineered robust backend REST APIs using Django, FastAPI, and Golang, supporting enterprise-grade web applications.",
+        "Automated email attachment processing with Python, integrated with PostgreSQL databases, and visualized results in PowerBI, saving 90% of manual effort.",
+        "Built a Python GUI tool to streamline deployment pipelines, reducing DevOps dependency by ~80%.",
+        "Designed and implemented a Golang-based log processor, reducing build revert rates by up to 99%.",
+        "Single-handedly set up and deployed applications on Windows and Linux servers.",
+        "Developed shell scripts and CI/CD to automate ~100% of deployment process with AWS and AZURE on Debian server.",
+        "Single-handedly set up and deployed a complete backend application using FastAPI, Alembic, SQL Server, and Docker.",
+        "Developed a Python script to collect IoT data via BACnet, store in a time-series DB, and apply business logic."
+      ]
+    },
+    {
+      "title": "Trainee Software Engineer",
+      "company": "Kanaka Software Consulting Pvt. Ltd",
+      "location": "Pune, Maharashtra",
+      "duration": "Feb 2022 – June 2022",
+      "responsibilities": [
+        "Engineered backend solutions using Django to support full-stack applications.",
+        "Developed the required solution using Angular, ensuring seamless functionality and user experience.",
+        "Automated data migration from CSV/Excel to PostgreSQL using Python, improving accessibility and reducing migration time."
+      ]
+    }
+  ],
+  "contact": {
+    "email": "inzamol@gmail.com",
+    "phone": "+918402098761",
+    "linkedin": "https://www.linkedin.com/in/inzamol",
+    "github": "https://github.com/inzamrzn918",
+    "location": "Barpeta, Assam, India"
+  }
+}

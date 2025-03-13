@@ -1,7 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Mail, Phone } from 'lucide-react';
 
+interface ContactInfo {
+  email: string;
+  phone: string;
+}
+
 const Contact = () => {
+  const [contact, setContact] = useState<ContactInfo | null>(null);
+
+  useEffect(() => {
+    fetch('/data.json')
+      .then((response) => response.json())
+      .then((data) => setContact(data.contact));
+  }, []);
+
+  if (!contact) {
+    return null;
+  }
+
   return (
     <section className="py-20 bg-slate-800">
       <div className="container mx-auto px-4">
@@ -12,14 +29,14 @@ const Contact = () => {
           </p>
           <div className="flex justify-center gap-4">
             <a
-              href="mailto:inzamol@gmail.com"
+              href={`mailto:${contact.email}`}
               className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg transition-colors"
             >
               <Mail size={20} />
               Email
             </a>
             <a
-              href="tel:+918402098761"
+              href={`tel:${contact.phone}`}
               className="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg transition-colors"
             >
               <Phone size={20} />
