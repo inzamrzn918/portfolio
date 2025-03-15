@@ -25,6 +25,20 @@ jobs:
       - name: Copy Public Files
         run: cp -r public/* dist/ || true  # Ensures the workflow doesn't fail if 'public/' doesn't exist
 
+      - name: Backup and Clean Server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          script: |
+            if [ -d "/var/www/html" ]; then
+              if [ -d "/var/www/html_backup" ]; then
+                sudo rm -rf /var/www/html_backup
+              fi
+              sudo mv /var/www/html /var/www/html_backup
+            fi
+
       - name: Deploy to Server
         uses: appleboy/scp-action@master
         with:
