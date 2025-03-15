@@ -28,12 +28,22 @@
     {
       "category": "Automation & Tools",
       "icon": "GitBranch",
-      "items": ["Git", "CI/CD pipelines", "Docker"]
+      "items": ["Git", "CI/CD pipelines", "Docker","Apache", "Nginx"]
     },
     {
-      "category": "Additional Tools",
-      "icon": "ExpandIcon",
-      "items": ["Apache", "Nginx"]
+      "category": "Frontend",
+      "icon": "WebApp",
+      "items": ["React","Angular","HTML", "CSS", "Bootstrap", "JavaScript"]
+    },
+    {
+      "category": "Others",
+      "icon": "Code",
+      "items": ["RESTful APIs", "Microservices", "Agile", "Scrum", "JIRA", "Confluence"]
+    },
+    {
+      "category": "Machine Learning",
+      "icon": "Code",
+      "items": ["TensorFlow", "Keras", "Scikit-learn", "OpenCV", "NLP"]
     }
   ],
   "certifications": [
