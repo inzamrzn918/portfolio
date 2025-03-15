@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Code, Database, Cloud, GitBranch, ExpandIcon } from 'lucide-react';
+import { Code, Database, Cloud, GitBranch, ExpandIcon, Server, FormInput, Brain } from 'lucide-react';
 
 interface Skill {
   category: string;
@@ -22,6 +22,9 @@ const Skills = () => {
     Cloud,
     GitBranch,
     ExpandIcon,
+    Brain,
+    Server,
+    FormInput,
   };
 
   return (

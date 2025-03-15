@@ -32,17 +32,17 @@
     },
     {
       "category": "Frontend",
-      "icon": "WebApp",
+      "icon": "FormInput",
       "items": ["React","Angular","HTML", "CSS", "Bootstrap", "JavaScript"]
     },
     {
       "category": "Others",
-      "icon": "Code",
+      "icon": "Server",
       "items": ["RESTful APIs", "Microservices", "Agile", "Scrum", "JIRA", "Confluence"]
     },
     {
       "category": "Machine Learning",
-      "icon": "Code",
+      "icon": "Brain",
       "items": ["TensorFlow", "Keras", "Scikit-learn", "OpenCV", "NLP"]
     }
   ],
