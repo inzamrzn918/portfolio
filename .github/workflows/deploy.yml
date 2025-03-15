@@ -39,6 +39,7 @@ jobs:
               sudo mv /var/www/html /var/www/html_backup
             fi
             sudo mkdir -p /var/www/html
+            sudo chown -R ${{ secrets.SSH_USER }}:$${{ secrets.SSH_USER }} /var/www/html
 
       - name: Deploy to Server
         uses: appleboy/scp-action@master
