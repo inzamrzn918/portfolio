@@ -7,6 +7,8 @@ const ScrollIndicator = () => {
     const handleScroll = () => {
       if (window.scrollY > 100) {
         setIsVisible(false);
+      }else{
+        setIsVisible(true);
       }
     };
 
