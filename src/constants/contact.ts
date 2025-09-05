@@ -12,3 +12,11 @@ export const CONTACT_METHODS: ContactMethod[] = [
     },
     // ... other contact methods
   ];
+
+export const contact = {
+  email: "inzamol@gmail.com",
+  phone: "+918402098761",
+  github: "https://github.com/inzamrzn918",
+  linkedin: "https://linkedin.com/in/inzamol",
+  location: "Bengaluru, Karnataka"
+};

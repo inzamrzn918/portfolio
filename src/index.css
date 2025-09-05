@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --blue-rgb: 59, 130, 246;
+  --purple-rgb: 147, 51, 234;
+  --pink-rgb: 236, 72, 153;
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -23,7 +29,15 @@
   }
   
   body {
-    @apply bg-slate-900;
+    @apply bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800;
+  }
+
+  section {
+    @apply py-20;
+  }
+
+  h2 {
+    @apply text-4xl font-bold mb-8 text-center;
   }
 }
 
@@ -37,7 +51,7 @@
   }
   
   .card {
-    @apply p-4 md:p-6 rounded-lg shadow-lg;
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg p-6 transition-transform hover:scale-105;
   }
 
   .scroll-indicator {
@@ -73,19 +87,152 @@
     align-items: center;
     justify-content: center;
   }
+
+  .btn {
+    @apply inline-flex items-center gap-2 px-6 py-3 rounded-full transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply btn bg-blue-600 hover:bg-blue-700 text-white hover:shadow-lg;
+  }
+
+  .btn-secondary {
+    @apply btn bg-purple-600 hover:bg-purple-700 text-white hover:shadow-lg;
+  }
+
+  .gradient-text {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500;
+  }
+  
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl shadow-xl;
+  }
+
+  /* Enhanced animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delay-1 {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 1s;
+  }
+
+  .animate-float-delay-2 {
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 2s;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+  }
+
+  /* Enhanced hover effects */
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+
+  .hover-glow {
+    transition: box-shadow 0.3s ease;
+  }
+
+  .hover-glow:hover {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+  }
+
+  /* Enhanced focus states */
+  .focus-ring {
+    @apply focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900;
+  }
+
+  /* Enhanced loading states */
+  .skeleton {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+  }
+
+  /* Enhanced scrollbar */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(59, 130, 246, 0.5) transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(59, 130, 246, 0.5);
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(59, 130, 246, 0.7);
+  }
 }
 
 @layer utilities {
   .touch-action-none {
     touch-action: none;
   }
+
+  /* Enhanced text effects */
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Enhanced backdrop effects */
+  .backdrop-blur-sm {
+    backdrop-filter: blur(4px);
+  }
+
+  .backdrop-blur-md {
+    backdrop-filter: blur(12px);
+  }
+
+  .backdrop-blur-lg {
+    backdrop-filter: blur(16px);
+  }
+
+  /* Enhanced gradients */
+  .gradient-mesh {
+    background: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+  }
 }
 
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #1a202c;
+  font-family: 'Inter', 'Arial', sans-serif;
+  background-color: #0a0118;
   color: #edf2f7;
+  overflow-x: hidden;
 }
 
 header {
@@ -115,6 +262,43 @@ header a {
 
 header a:hover {
   color: #3b82f6;
+}
+
+/* Enhanced keyframe animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(59, 130, 246, 0.8);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 @keyframes bounce {
@@ -158,4 +342,78 @@ header a:hover {
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
+}
+
+/* Enhanced responsive design */
+@media (max-width: 768px) {
+  .container {
+    @apply px-4;
+  }
+  
+  .section {
+    @apply py-16;
+  }
+  
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+}
+
+/* Enhanced dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --blue-rgb: 96, 165, 250;
+    --purple-rgb: 167, 139, 250;
+    --pink-rgb: 244, 114, 182;
+  }
+}
+
+/* Enhanced print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  
+  .gradient-text {
+    color: black !important;
+  }
+}
+
+
+.nav-links {
+  @apply flex justify-center items-center space-x-8 relative;
+}
+
+.nav-link {
+  @apply cursor-pointer text-sm font-medium transition-colors duration-300 relative py-4;
+}
+
+.nav-link::after {
+  content: '';
+  @apply absolute bottom-0 left-0 w-full h-0.5 bg-blue-500 transform scale-x-0 transition-transform duration-300 origin-left;
+}
+
+.nav-link.active {
+  @apply text-blue-500;
+}
+
+.nav-link.active::after {
+  @apply scale-x-100;
+}
+
+.nav-link:not(.active) {
+  @apply text-gray-300 hover:text-white;
+}
+
+.nav-link:hover::after {
+  @apply scale-x-100 bg-blue-500/50;
 }

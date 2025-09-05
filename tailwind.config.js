@@ -1,20 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{html,js,jsx,ts,tsx,css}'],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
-    screens: {
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1536px',
-    },
     extend: {
-      spacing: {
-        '18': '4.5rem',
-        '22': '5.5rem',
+      colors: {
+        'background': '#0a0118',
+        'card': '#0f0627',
+      },
+      backgroundImage: {
+        'gradient-primary': 'linear-gradient(to right, rgb(59, 130, 246), rgb(147, 51, 234))',
       }
-    },
+    }
   },
   plugins: [],
-};
+}

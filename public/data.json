@@ -44,6 +44,21 @@
       "category": "Machine Learning",
       "icon": "Brain",
       "items": ["TensorFlow", "Keras", "Scikit-learn", "OpenCV", "NLP"]
+    },
+    {
+      "category": "Message Queues & Task Scheduling",
+      "icon": "Database",
+      "items": ["Celery", "RabbitMQ", "Redis", "SQLAlchemy", "GenAI", "Apache Superset"]
+    },
+    {
+      "category": "Data Processing & Visualization",
+      "icon": "Database",
+      "items": ["PowerBI", "Excel", "CSV Processing", "Data Migration", "Time-series DB"]
+    },
+    {
+      "category": "IoT & Automation",
+      "icon": "Server",
+      "items": ["BACnet Protocol", "IoT Data Collection", "Business Logic", "Shell Scripts", "Linux/Windows Servers"]
     }
   ],
   "certifications": [
@@ -161,6 +176,46 @@
         "Frontend": "https://github.com/inzamrzn918/Leave-Management-System-Frontend",
         "Backend": "https://github.com/inzamrzn918/Leave-Management-System-Backend"
       }
+    },
+    {
+      "title": "IoT Data Collection System",
+      "technologies": "Python, BACnet, Time-series Database, Business Logic",
+      "description": [
+        "Developed a Python script to collect IoT data via BACnet protocol",
+        "Implemented time-series database storage for efficient data management",
+        "Applied business logic to process and analyze IoT sensor data",
+        "Integrated with existing enterprise systems for real-time monitoring"
+      ]
+    },
+    {
+      "title": "Log Processor & CI/CD Optimizer",
+      "technologies": "Golang, CI/CD, Build Optimization",
+      "description": [
+        "Designed and implemented a Golang-based log processor for CI/CD pipelines",
+        "Reduced build revert rates by up to 99% through intelligent log analysis",
+        "Optimized deployment processes and improved system reliability",
+        "Integrated with existing CI/CD infrastructure for seamless operation"
+      ]
+    },
+    {
+      "title": "Email Attachment Processor",
+      "technologies": "Python, PostgreSQL, PowerBI, Data Visualization",
+      "description": [
+        "Automated email attachment processing with Python, saving 90% of manual effort",
+        "Integrated with PostgreSQL databases for efficient data storage and retrieval",
+        "Visualized results in PowerBI for better data insights and reporting",
+        "Streamlined business processes through intelligent automation"
+      ]
+    },
+    {
+      "title": "Deployment Automation Tool",
+      "technologies": "Python, GUI (TKinter), CI/CD, AWS, Azure",
+      "description": [
+        "Built a Python GUI tool to streamline deployment pipelines",
+        "Reduced DevOps dependency by ~80% through automation",
+        "Integrated with AWS and Azure cloud platforms for seamless deployment",
+        "Developed shell scripts and CI/CD pipelines for 100% automated deployments"
+      ]
     }
   ],
   "education": [
@@ -206,6 +261,18 @@
         "Developed the required solution using Angular, ensuring seamless functionality and user experience.",
         "Automated data migration from CSV/Excel to PostgreSQL using Python, improving accessibility and reducing migration time."
       ]
+    },
+    {
+      "title": "Senior Software Engineer",
+      "company": "Dentsu Global Service",
+      "location": "Bengaluru, Karnataka",
+      "duration": "Apr 2025 – Present",
+      "responsibilities": [
+        "Engineered high-performance REST APIs using FastAPI improving scalability and response times",
+        "Designed and implemented a task scheduling system with FastAPI, Celery, RabbitMQ, Redis and SQLAlchemy",
+        "Developed Apache Superset plugin to create and embed tailored charts and dashboard",
+        "Integrated GenAI in existing application to extract insides from large data and generate reports"
+      ]
     }
   ],
   "contact": {
@@ -213,6 +280,6 @@
     "phone": "+918402098761",
     "linkedin": "https://www.linkedin.com/in/inzamol",
     "github": "https://github.com/inzamrzn918",
-    "location": "Barpeta, Assam, India"
+    "location": "Bengaluru, Karnataka, India"
   }
 }

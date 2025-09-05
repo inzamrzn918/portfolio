@@ -1,32 +1,45 @@
+export interface ContactInfo {
+  email: string;
+  phone: string;
+  github: string;
+  linkedin: string;
+  location: string;
+}
+
 export interface Experience {
-    id: string;
-    title: string;
-    company: string;
-    location: string;
-    period: string;
-    responsibilities: string[];
-  }
-  
-  export interface Education {
-    id: string;
-    degree: string;
-    institution: string;
-    location: string;
-    year: string;
-    details: string[];
-  }
-  
-  export interface Skill {
-    id: string;
-    category: string;
-    icon: React.ElementType;
-    items: string[];
-  }
-  
-  export interface ContactMethod {
-    id: string;
-    type: 'email' | 'phone' | 'linkedin' | 'github';
-    value: string;
-    icon: React.ElementType;
-    href: string;
-  }
+  title: string;
+  company: string;
+  location: string;
+  duration: string;
+  description: string[];
+  skills: string[];
+}
+
+export interface Project {
+  title: string;
+  description: string;
+  technologies: string[];
+  image: string;
+  github?: string;
+  demo?: string;
+}
+
+export interface Education {
+  degree: string;
+  institution: string;
+  duration: string;
+  location: string;
+  description?: string;
+}
+
+export interface Certification {
+  name: string;
+  issuer: string;
+  date: string;
+  url?: string;
+}
+
+export interface Skill {
+  category: string;
+  items: string[];
+}
