@@ -59,16 +59,30 @@ const Contact = () => {
     e.preventDefault();
     setFormStatus({ loading: true, error: null, success: false });
 
+    // console.log('Sending email with the following data:', formData);
+    // console.log(import.meta.env);
+
     try {
       await emailjs.send(
-        process.env.REACT_APP_EMAILJS_SERVICE_ID!,
-        process.env.REACT_APP_EMAILJS_TEMPLATE_ID!,
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID!,
+        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID!,
         {
-          from_name: formData.name,
+          name: formData.name,
           from_email: formData.email,
           message: formData.message,
+          time: new Date().toLocaleString()
         },
-        process.env.REACT_APP_EMAILJS_PUBLIC_KEY
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
+      );
+
+      await emailjs.send(
+        import.meta.env.VITE_APP_EMAILJS_SERVICE_ID!,
+        import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID_AUTO_REPLY!,
+        {
+          name: formData.name,
+          email: formData.email
+        },
+        import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
       );
 
       setFormStatus({ loading: false, error: null, success: true });
@@ -76,7 +90,7 @@ const Contact = () => {
     } catch (error) {
       setFormStatus({ 
         loading: false, 
-        error: 'Failed to send message. Please try again.', 
+        error: error?.toString() || 'Failed to send message. Please try again later.', 
         success: false 
       });
     }

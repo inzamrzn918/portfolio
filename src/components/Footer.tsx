@@ -18,6 +18,7 @@ const Footer = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [hoveredIcon, setHoveredIcon] = useState<string | null>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [showScrollButton, setShowScrollButton] = useState(false);
 
   useEffect(() => {
     fetch('/data.json')
@@ -32,6 +33,23 @@ const Footer = () => {
         console.error('Error fetching footer data:', error);
         setIsLoading(false);
       });
+  }, []);
+
+  // Replace the existing useEffect for scroll detection
+  useEffect(() => {
+    const handleScroll = () => {
+      // Show button when scrolled more than 100vh (one full viewport height)
+      const scrollThreshold = window.innerHeight;
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      setShowScrollButton(currentScroll > scrollThreshold);
+    };
+
+    // Initial check
+    handleScroll();
+
+    // Add scroll listener
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const scrollToTop = () => {
@@ -225,13 +243,18 @@ const Footer = () => {
       </div>
 
       {/* Enhanced Back to Top Button */}
-      <button
-        onClick={scrollToTop}
-        className="fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-full shadow-lg hover:shadow-xl hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-110 z-50 group"
-        aria-label="Back to top"
-      >
-        <ArrowUp className="w-6 h-6 mx-auto group-hover:animate-bounce" />
-      </button>
+      {showScrollButton && (
+        <button
+          onClick={scrollToTop}
+          className={`fixed bottom-8 right-8 w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-600 
+          hover:from-blue-600 hover:to-purple-700 text-white rounded-full shadow-lg hover:shadow-xl 
+          hover:shadow-blue-500/25 transition-all duration-300 transform hover:scale-110 z-50 
+          ${showScrollButton ? 'opacity-100' : 'opacity-0'}`}
+          aria-label="Back to top"
+        >
+          <ArrowUp className="w-6 h-6 mx-auto group-hover:animate-bounce" />
+        </button>
+      )}
     </footer>
   );
 };

@@ -93,7 +93,7 @@ const Navbar = () => {
                 }`}
               >
                 {item.name}
-                <div className={`absolute bottom-0 left-1/2 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:w-full group-hover:left-0 ${
+                <div className={`absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-300 group-hover:w-full group-hover:left-0 ${
                   item.active ? 'w-full left-0' : ''
                 }`}></div>
                 {item.active && (

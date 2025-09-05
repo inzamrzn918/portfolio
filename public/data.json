@@ -3,7 +3,7 @@
     {
       "category": "Programming Languages",
       "icon": "Code",
-      "items": ["Python", "Go", "JavaScript", "Java", "PHP"]
+      "items": ["Python", "Go", "JavaScript", "TypeScript", "SQL"]
     },
     {
       "category": "Frameworks",
@@ -43,7 +43,7 @@
     {
       "category": "Machine Learning",
       "icon": "Brain",
-      "items": ["TensorFlow", "Keras", "Scikit-learn", "OpenCV", "NLP"]
+      "items": ["Gen AI", "Agentic AI", "GPT", "MCP"]
     },
     {
       "category": "Message Queues & Task Scheduling",
@@ -236,10 +236,22 @@
   ],
   "experiences":[
     {
+      "title": "Senior Software Engineer",
+      "company": "Dentsu Global Service",
+      "location": "Bengaluru, Karnataka",
+      "duration": "Apr 2025 - Present",
+      "responsibilities": [
+        "Engineered high-performance REST APIs using FastAPI improving scalability and response times",
+        "Designed and implemented a task scheduling system with FastAPI, Celery, RabbitMQ, Redis and SQLAlchemy",
+        "Developed Apache Superset plugin to create and embed tailored charts and dashboard",
+        "Integrated GenAI in existing application to extract insides from large data and generate reports"
+      ]
+    },
+    {
       "title": "Associate Software Engineer",
       "company": "Kanaka Software Consulting Pvt. Ltd",
       "location": "Pune, Maharashtra",
-      "duration": "July 2022 - Present",
+      "duration": "July 2022 - Mar 2025",
       "responsibilities": [
         "Engineered robust backend REST APIs using Django, FastAPI, and Golang, supporting enterprise-grade web applications.",
         "Automated email attachment processing with Python, integrated with PostgreSQL databases, and visualized results in PowerBI, saving 90% of manual effort.",
@@ -255,23 +267,11 @@
       "title": "Trainee Software Engineer",
       "company": "Kanaka Software Consulting Pvt. Ltd",
       "location": "Pune, Maharashtra",
-      "duration": "Feb 2022 – June 2022",
+      "duration": "Feb 2022 - June 2022",
       "responsibilities": [
         "Engineered backend solutions using Django to support full-stack applications.",
         "Developed the required solution using Angular, ensuring seamless functionality and user experience.",
         "Automated data migration from CSV/Excel to PostgreSQL using Python, improving accessibility and reducing migration time."
-      ]
-    },
-    {
-      "title": "Senior Software Engineer",
-      "company": "Dentsu Global Service",
-      "location": "Bengaluru, Karnataka",
-      "duration": "Apr 2025 – Present",
-      "responsibilities": [
-        "Engineered high-performance REST APIs using FastAPI improving scalability and response times",
-        "Designed and implemented a task scheduling system with FastAPI, Celery, RabbitMQ, Redis and SQLAlchemy",
-        "Developed Apache Superset plugin to create and embed tailored charts and dashboard",
-        "Integrated GenAI in existing application to extract insides from large data and generate reports"
       ]
     }
   ],
