@@ -13,7 +13,7 @@
     "deploy": "node deploy.cjs",
     "lint": "eslint .",
     "preview": "vite preview",
-    "dh": "gh-pages -d build"
+    "dh": "gh-pages -d dist"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
