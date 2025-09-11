@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Mail, Phone, MessageCircle, Send, MapPin, Clock, Users } from 'lucide-react';
+import { Mail, Phone, MessageCircle, Send } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 
 interface ContactInfo {
