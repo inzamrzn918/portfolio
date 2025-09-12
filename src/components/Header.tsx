@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { DownloadCloudIcon, Github, Linkedin, Mail, Phone, ArrowDown } from 'lucide-react';
+import { DownloadCloudIcon, Github, Linkedin, Mail, Phone, Bot, BotMessageSquareIcon } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import Modal from './Modal';
 import ScrollIndicator from './ScrollIndicator';
 
@@ -20,6 +21,7 @@ const Header = () => {
   const [data, setData] = useState<HeaderData | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetch('/data.json')
@@ -136,6 +138,15 @@ const Header = () => {
               <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               <Mail className="w-6 h-6 group-hover:animate-pulse relative z-10" />
               <span className="relative z-10">Hire Me</span>
+            </button>
+
+            <button
+              onClick={() => navigate('/chat')}
+              className="group inline-flex items-center gap-3 bg-white/10 backdrop-blur-sm hover:bg-white/20 text-gray-800 dark:text-white px-10 py-4 rounded-2xl transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:-translate-y-1 font-semibold text-lg border border-white/20 hover:border-white/40 relative overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-pink-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <BotMessageSquareIcon className="w-6 h-6 group-hover:animate-pulse relative z-10" />
+              <span className="relative z-10">Chat Now</span>
             </button>
           </div>
         </div>

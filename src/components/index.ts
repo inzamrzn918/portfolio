@@ -11,3 +11,4 @@ export { default as Education } from './Education';
 export { default as Contact } from './Contact';
 export { default as Navbar } from './Navbar';
 export { default as ErrorBoundary } from './ErrorBoundary';
+export { default as Chat } from './Chat';

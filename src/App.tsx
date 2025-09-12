@@ -1,6 +1,7 @@
 import React, { Suspense, useState, useEffect } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
-import { About, Contact, Contact as ContactComponent, Education, Experience, Footer, Header, Projects, Skills, Certifications } from './components';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { About, Contact, Contact as ContactComponent, Education, Experience, Footer, Header, Projects, Skills, Certifications, Chat } from './components';
 import ErrorFallback from './components/ErrorBoundary';
 import Navbar from './components/Navbar';
 
@@ -47,53 +48,60 @@ const App = () => {
 
   return (
     <ErrorBoundary FallbackComponent={ErrorFallback}>
-      <div className={`bg-[#0a0118] min-h-screen text-white transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
-        {/* Enhanced Navigation */}
-        <Navbar />
-        
-        {/* Enhanced Header Section */}
-        <Header />
-        
-        {/* Enhanced Main Content */}
-        <main className="container mx-auto px-4 relative">
-          {/* Background decoration for main content */}
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-900/5 via-purple-900/5 to-pink-900/5 pointer-events-none"></div>
-          
-          {/* Content sections with staggered animations */}
-          <div className="relative z-10 space-y-0">
-            <div className={`transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <About />
+      <Router>
+        <Routes>
+          <Route path="/chat" element={<Chat />} />
+          <Route path="/" element={
+            <div className={`bg-[#0a0118] min-h-screen text-white transition-all duration-1000 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+              {/* Enhanced Navigation */}
+              <Navbar />
+              
+              {/* Enhanced Header Section */}
+              <Header />
+              
+              {/* Enhanced Main Content */}
+              <main className="container mx-auto px-4 relative">
+                {/* Background decoration for main content */}
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/5 via-purple-900/5 to-pink-900/5 pointer-events-none"></div>
+                
+                {/* Content sections with staggered animations */}
+                <div className="relative z-10 space-y-0">
+                  <div className={`transition-all duration-1000 delay-200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                    <About />
+                  </div>
+                  
+                  <div className={`transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                    <Experience />
+                  </div>
+                  
+                  <div className={`transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                    <Projects />
+                  </div>
+                  
+                  <div className={`transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                    <Skills />
+                  </div>
+                  
+                  <div className={`transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                    <Certifications />
+                  </div>
+                  
+                  <div className={`transition-all duration-1000 delay-1200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                    <Education />
+                  </div>
+                  
+                  <div className={`transition-all duration-1000 delay-1400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+                    <ContactComponent />
+                  </div>
+                </div>
+              </main>
+              
+              {/* Enhanced Footer */}
+              <Footer />
             </div>
-            
-            <div className={`transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <Experience />
-            </div>
-            
-            <div className={`transition-all duration-1000 delay-600 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <Projects />
-            </div>
-            
-            <div className={`transition-all duration-1000 delay-800 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <Skills />
-            </div>
-            
-            <div className={`transition-all duration-1000 delay-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <Certifications />
-            </div>
-            
-            <div className={`transition-all duration-1000 delay-1200 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <Education />
-            </div>
-            
-            <div className={`transition-all duration-1000 delay-1400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-              <ContactComponent />
-            </div>
-          </div>
-        </main>
-        
-        {/* Enhanced Footer */}
-        <Footer />
-      </div>
+          } />
+        </Routes>
+      </Router>
     </ErrorBoundary>
   );
 };
