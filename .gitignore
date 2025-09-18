@@ -38,3 +38,4 @@ fast_api_bakend/.venv
 .env.test.local
 .env.production
 .
+*.pyc

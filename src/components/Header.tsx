@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
-import { DownloadCloudIcon, Github, Linkedin, Mail, Phone, Bot, BotMessageSquareIcon } from 'lucide-react';
+import { DownloadCloudIcon, Github, Linkedin, Mail, Phone, BotMessageSquareIcon } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Modal from './Modal';
-import ScrollIndicator from './ScrollIndicator';
 
 interface ContactData {
   email: string;

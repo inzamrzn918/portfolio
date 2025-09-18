@@ -1,0 +1,10 @@
+fastapi[all]
+uvicorn[standard]
+python-dotenv
+langchain-huggingface
+langchain-google-genai
+numpy
+pdfplumber
+pdf2image
+pytesseract
+duckduckgo_search
