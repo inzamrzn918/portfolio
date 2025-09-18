@@ -28,7 +28,7 @@ async def chat_endpoint(websocket: WebSocket):
     conn_id = str(uuid.uuid4())
     _connections[conn_id] = {"history": []}
 
-    await websocket.send_text("✅ Connected to modular RAG chatbot")
+    await websocket.send_text("✅ Connected to INZA AI, The AI Assistant")
 
     try:
         while True:
